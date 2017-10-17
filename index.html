@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>10-12.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script>/*-----------------------------返回值类型*/
+//取反：感叹号
+var a = true;
+alert(!!!!!!!a);
+//关于NaN
+alert(NaN == NaN);
+//关于等号
+var a = 12;
+var b = '12';
+alert(a == b);
+//关于调试错误
+for(var i = 0; i < 100; i++){
+	console.log(i);
+}
+//检测是不是一个数字
+var a = 'as';
+alert(isNaN(a));
+//判断真假
+var a = NaN;
+if(a){
+	alert('true');	
+}else{
+	alert('false');
+}
+
+var oBox = document.getElementById('box1');
+	alert(oBox);//null;
+
+var a = null;
+if(a){
+	alert('true');	
+}else{
+	alert('false');
+}
+/*全选,反选*/
+window.onload=function(){
+	//全选
+	var Input=document.getElementsByTagName("input");
+	var Input2=document.getElementById("last");
+	
+	Input[0].onclick=function(){
+		for(var i=0;i<Input.length;i++){
+			Input[i].checked=true;
+		}
+		}
+		//判断按钮的状态是否为选中:
+			Input2.onclick=function(){
+			if(Input2.checked == true){
+				/*alert(Input2.chevked)*/
+			//如果按钮是选中状态,所有的按钮都选中
+			for(var i = 1; i < Input.length; i++){
+				Input[i].checked = true;	
+			}
+		}else{//如果按钮不是选中状态,所有的按钮都不选中;
+			for(var i = 1; i < Input.length; i++){
+				Input[i].checked = false;	
+			}
+		}	
+	}
+	//不选
+	Input[1].onclick=function(){
+		for(var i=0;i<Input.length;i++){
+			Input[i].checked=false;
+		}
+	}
+	//反选
+	Input[2].onclick=function(){
+		for(var i=0;i<Input.length;i++){
+			if(Input[i].checked == true){
+			Input[i].checked=false;	
+			}else{
+		    Input[i].checked=true;
+			}
+			/*Input[i].checked=!Input[i].checked;*/
+		}
+	}
+	var oDiv = document.getElementsByTagName('div')[0];
+	alert(typeof oDiv);
+	
+	//数据类型
+	var Input3=document.getElementById("last1");
+	Input3.onclick=function(){
+	var a = '12';
+    alert(typeof Number(a));
+	var a = '12s';
+    alert(Number(a));
+	var a = '12.123213124';
+    var b = '12';
+    alert(parseInt(b));
+    alert(parseInt(a));
+	var a = '12.123213124';
+    var b = '12assdad123214';
+    alert(parseFloat(b));//12
+    alert(parseFloat(a));
+	
+	}
+}
+
+</script>
+
+  </head>
+  
+  <body>
+<input type="button" value="全选">
+<input type="button" value="不选">
+<input type="button" value="反选">
+<hr/>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox"><br>
+<input type="checkbox" id="last">
+ <div></div><br>
+ <input type="button" value="显示"  id="last1">
+  </body>
+</html>
